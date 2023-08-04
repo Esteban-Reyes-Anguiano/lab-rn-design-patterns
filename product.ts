@@ -12,4 +12,4 @@ export class ConcreteProductB implements Product {
   public operation(): string {
     return "Result of ConcreteProductB.";
   }
-}
+} 

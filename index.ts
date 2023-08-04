@@ -2,7 +2,7 @@ import {Logger} from './logger';
 import ProductFactory from './productFactory';
 import Facade from './facade';
 import { Subject, Observer } from './observer';
-
+ 
 console.log("-------------------ITERACION 1-----------------------");
 
 const logger1 = Logger.getInstance();

@@ -28,3 +28,4 @@ export class Subject {
     this.notifyObservers("Some data to be sent to observers.");
   }
 }
+ 

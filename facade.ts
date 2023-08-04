@@ -27,4 +27,4 @@ class Facade {
   }
 }
 
-export default Facade;
+export default Facade; 

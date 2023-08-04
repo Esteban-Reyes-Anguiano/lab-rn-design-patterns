@@ -6,4 +6,4 @@ export default class SubsystemB {
   public operationB2(): string {
     return "SubsystemB: operation B2.";
   }
-}
+} 

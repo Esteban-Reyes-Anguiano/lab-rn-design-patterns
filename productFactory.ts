@@ -1,4 +1,3 @@
-// productFactory.ts
 import { Product, ConcreteProductA, ConcreteProductB } from './product';
 
 export class ProductFactory {
@@ -14,4 +13,4 @@ export class ProductFactory {
   }
 }
 
-export default ProductFactory;
+export default ProductFactory; 

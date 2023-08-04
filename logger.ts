@@ -20,3 +20,4 @@ export class Logger {
     this.logs.forEach((log) => console.log(log));
   }
 }
+ 
