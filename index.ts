@@ -1,6 +1,7 @@
 import {Logger} from './logger';
 import ProductFactory from './productFactory';
 import Facade from './facade';
+import { Subject, Observer } from './observer';
 
 console.log("-------------------ITERACION 1-----------------------");
 
@@ -42,31 +43,34 @@ console.log(resultA); // Output: "SubsystemA: operation A1. SubsystemA: operatio
 console.log(resultB); // Output: "SubsystemB: operation B1. SubsystemB: operation B2."
 console.log(resultC); 
 
-// // Iteration 4: 
 
-// class ConcreteObserver implements Observer {
-//   public update(data: any): void {
-//     console.log(`Received update with data: ${data}`);
-//   }
-// }
+console.log("-------------------ITERACION 4-----------------------");
 
-// const subject = new Subject();
+// Iteration 4: 
 
-// const observer1 = new ConcreteObserver();
-// const observer2 = new ConcreteObserver();
+class ConcreteObserver implements Observer {
+  public update(data: any): void {
+    console.log(`Received update with data: ${data}`);
+  }
+}
 
-// subject.addObserver(observer1);
-// subject.addObserver(observer2);
+const subject = new Subject();
 
-// subject.someBusinessLogic();
-// // Output:
-// // Doing some business logic...
-// // Received update with data: Some data to be sent to observers.
-// // Received update with data: Some data to be sent to observers.
+const observer1 = new ConcreteObserver();
+const observer2 = new ConcreteObserver();
 
-// subject.removeObserver(observer1);
+subject.addObserver(observer1);
+subject.addObserver(observer2);
 
-// subject.someBusinessLogic();
-// // Output:
-// // Doing some business logic...
-// // Received update with data: Some data to be sent to observers.
+subject.someBusinessLogic();
+// Output:
+// Doing some business logic...
+// Received update with data: Some data to be sent to observers.
+// Received update with data: Some data to be sent to observers.
+
+subject.removeObserver(observer1);
+
+subject.someBusinessLogic();
+// Output:
+// Doing some business logic...
+// Received update with data: Some data to be sent to observers.s
