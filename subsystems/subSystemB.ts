@@ -1,4 +1,4 @@
-class SubsystemB {
+export default class SubsystemB {
   public operationB1(): string {
     return "SubsystemB: operation B1.";
   }
