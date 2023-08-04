@@ -1,7 +1,17 @@
-// TODO: Implement the ProductFactory class using the Factory pattern
+// productFactory.ts
+import { Product, ConcreteProductA, ConcreteProductB } from './product';
 
-class ProductFactory {
-  // TODO: Implement the factory method that creates and returns Product instances
+export class ProductFactory {
+  createProduct(type: string): Product {
+    switch (type) {
+      case 'A':
+        return new ConcreteProductA();
+      case 'B':
+        return new ConcreteProductB();
+      default:
+        throw new Error(`Invalid product type: ${type}`);
+    }
+  }
 }
 
 export default ProductFactory;

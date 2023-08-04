@@ -1,7 +1,8 @@
 import {Logger} from './logger';
-// import ProductFactory from './productFactory';
+import ProductFactory from './productFactory';
 // import Facade from './facade';
 
+console.log("-------------------ITERACION 1-----------------------");
 
 const logger1 = Logger.getInstance();
 const logger2 = Logger.getInstance();
@@ -13,15 +14,20 @@ logger1.log("Message 2 from logger1");
 logger1.printLogs();
 logger2.printLogs();
 
+console.log("-------------------ITERACION 2-----------------------");
+
+
 // Iteration 2:
 
-// const factory = new ProductFactory();
+const factory = new ProductFactory();
 
-// const productA = factory.createProduct('A');
-// const productB = factory.createProduct('B');
+const productA = factory.createProduct('A');
+const productB = factory.createProduct('B');
 
-// console.log(productA.operation()); // Output: "Result of ConcreteProductA."
-// console.log(productB.operation()); // Output: "Result of ConcreteProductB."
+console.log(productA.operation()); // Output: "Result of ConcreteProductA."
+console.log(productB.operation()); // Output: "Result of ConcreteProductB."
+
+console.log("-------------------ITERACION 2-----------------------");
 
 // // Iteration 3:
 
