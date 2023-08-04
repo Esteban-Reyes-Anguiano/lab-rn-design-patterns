@@ -1,13 +1,14 @@
-class Logger {
+export class Logger {
   private static instance: Logger;
-  private logs: string[];
+  private logs: string[] = [];
 
-  private constructor() {
-    this.logs = [];
-  }
+  private constructor() {}
 
-  public static getInstance() {
-    // TODO: Implement the Singleton pattern here
+  public static getInstance(): Logger {
+    if (!Logger.instance) {
+      Logger.instance = new Logger();
+    }
+    return Logger.instance;
   }
 
   public log(message: string): void {
@@ -16,10 +17,6 @@ class Logger {
 
   public printLogs(): void {
     console.log("Logs:");
-    for (const log of this.logs) {
-      console.log(log);
-    }
+    this.logs.forEach((log) => console.log(log));
   }
 }
-
-export default Logger;
